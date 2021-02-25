@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Android APP</string>
+    <string name="etUserName_hint">User Name</string>
+    <string name="password_hint">Password</string>
+    <string name="btn_log_in_hint">Log In</string>
+    <string name="btnclear_hint">Clear</string>
+    <!--    <string name="etPassword_hint">Password</string>-->
+
+
+
 </resources>

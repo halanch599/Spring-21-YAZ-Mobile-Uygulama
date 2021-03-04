@@ -5,6 +5,9 @@
     <string name="btn_log_in_hint">Log In</string>
     <string name="btnclear_hint">Clear</string>
     <string name="btnRegister_msg">Register</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btnBack">Back</string>
+
     <string name="btnNameHint">Name</string>
     <string name="etEmail">Email</string>
     <string name="etReenterPassword">Re-enter password</string>
@@ -13,9 +16,20 @@
     <string name="preferred_Time24">All Time</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="btnRegister">Preffered Time</string>
     <string name="Back">Back</string>
+    <string name="name">Name</string>
+    <string name="only_working_hours">Only Working Hours</string>
+    <string name="all_time">All Time</string>
 
+
+    <string-array name="country">
+        <item>Turkey</item>
+        <item>Russia</item>
+        <item>Azerbayjan</item>
+        <item>China</item>
+        <item>Pakistan</item>
+        <item>America</item>
+    </string-array>
     <!--    <string name="etPassword_hint">Password</string>-->
 
 

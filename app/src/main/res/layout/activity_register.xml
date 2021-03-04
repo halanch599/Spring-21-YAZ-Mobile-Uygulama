@@ -42,7 +42,7 @@
         android:ems="10"
         android:paddingLeft="16dp"
         android:inputType="textPersonName"
-        android:hint="Name"         />
+        android:hint="@string/name"         />
 
     <EditText
         android:id="@+id/etEmail"
@@ -74,7 +74,7 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/etPasswordReenter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -115,17 +115,19 @@
             android:id="@+id/cb8hours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Only Working Hours" />
+            android:layout_marginRight="10dp"
+            android:text="@string/only_working_hours" />
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="All Time" />
+            android:text="@string/all_time" />
     </LinearLayout>
 
     <RadioGroup
+        android:id="@+id/radiogroupGender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -136,17 +138,26 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:layout_marginRight="20dp"
+            android:text="@string/male" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female" />
+            android:text="@string/female" />
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinnerCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -159,32 +170,34 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@color/purple_700"
-            android:text="Button"
+            android:background="@drawable/btn_background"
+            android:text="@string/btnRegister_msg"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnClear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@color/purple_700"
-            android:text="Button"
+            android:background="@drawable/btn_background"
+            android:text="@string/btn_clear"
             android:textColor="@color/white"
             android:textSize="18sp" />
-
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@color/purple_700"
-            android:text="Button"
+            android:background="@drawable/btn_background"
+            android:text="@string/btnBack"
             android:textColor="@color/white"
             android:textSize="18sp" />
     </LinearLayout>

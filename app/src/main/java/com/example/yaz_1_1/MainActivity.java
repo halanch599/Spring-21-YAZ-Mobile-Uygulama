@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.yaz_1_1.model.DbHelper;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText etuserName;
@@ -68,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        if(username.equals("admin") && password.equals("12345"))
+       // if(username.equals("admin") && password.equals("12345"))
+        if(DbHelper.Login(username,password))
         {
 //            tvMessage.setText("Welcome, " + username);
 //            tvMessage.setTextColor(Color.GREEN);

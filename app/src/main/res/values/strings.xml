@@ -16,7 +16,7 @@
     <string name="preferred_Time24">All Time</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="Back">Back</string>
+
     <string name="name">Name</string>
     <string name="only_working_hours">Only Working Hours</string>
     <string name="all_time">All Time</string>
@@ -36,6 +36,13 @@
     <string name="divide">÷</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="Back">Back</string>
+    <string name="CE">CE</string>
+    <string name="C">C</string>
+    <string name="per">%</string>
+    <string name="plusminus">+/-</string>
+    <string name="dot">.</string>
+    <string name="equal">=</string>
 
     <string-array name="country">
         <item>Turkey</item>

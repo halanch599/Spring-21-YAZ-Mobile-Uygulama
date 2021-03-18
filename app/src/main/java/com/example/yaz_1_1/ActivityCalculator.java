@@ -17,6 +17,7 @@ public class ActivityCalculator extends AppCompatActivity {
     String history, currentResult;
     String status =null;
     boolean operator=false;
+    // callback method
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,22 +124,250 @@ public class ActivityCalculator extends AppCompatActivity {
             }
         });
 
+        btndot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (text==null)
+                {
+                    text = "0.";
+                }
+                else {
+                    if (text.indexOf('.') == -1) {
+                        text += ".";
+                    }
+                }
+                tvresult.setText(text);
+            }
+        });
+
+        btnce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvresult.setText("");
+                tbhistory.setText("");
+                text=null;
+                status = null;
+                num1 =0;
+                num2=0;
+            }
+        });
+
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (text!=null && text.length()>0)
+                {
+                    text = text.substring(0,text.length()-1);
+                    tvresult.setText(text);
+                }
+            }
+        });
+
+
+        btnplus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                history = tbhistory.getText().toString();
+                currentResult = tvresult.getText().toString();
+                tbhistory.setText(history + currentResult + "+");
+                if(operator)
+                {
+                    if(status =="divide")
+                    {
+                        divide();
+
+                    }
+                    else if(status =="multiply")
+                    {
+                        multiply();
+                    }
+                    else if (status=="minus")
+                    {
+                        minus();
+                    }
+                    else
+                    {
+                        plus();
+                    }
+                }
+                status="plus";
+                operator =false;
+                text=null;
+            }
+        });
+
+        btnminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                history = tbhistory.getText().toString();
+                currentResult = tvresult.getText().toString();
+                tbhistory.setText(history + currentResult + "-");
+                if(operator)
+                {
+                    if(status =="divide")
+                    {
+                        divide();
+
+                    }
+                    else if(status =="multiply")
+                    {
+                        multiply();
+                    }
+                    else if (status=="plus")
+                    {
+                        plus();
+
+                    }
+                    else
+                    {
+                        minus();
+                    }
+                }
+                status="minus";
+                operator =false;
+                text=null;
+            }
+        });
+
+        btnmul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                history = tbhistory.getText().toString();
+                currentResult = tvresult.getText().toString();
+                tbhistory.setText(history + currentResult + "x");
+                if(operator)
+                {
+                    if(status =="divide")
+                    {
+                        divide();
+
+                    }
+                    else if(status =="plus")
+                    {
+                        plus();
+                    }
+                    else if (status=="minus")
+                    {
+                        minus();
+                    }
+                    else
+                    {
+                        multiply();
+                    }
+                }
+                status="multiply";
+                operator =false;
+                text=null;
+            }
+        });
+
+        btndivide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                history = tbhistory.getText().toString();
+                currentResult = tvresult.getText().toString();
+                tbhistory.setText(history + currentResult + "/");
+                if(operator)
+                {
+                    if(status =="plus")
+                    {
+                        plus();
+                    }
+                    else if(status =="multiply")
+                    {
+                        multiply();
+                    }
+                    else if (status=="minus")
+                    {
+                        minus();
+                    }
+                    else
+                    {
+                        divide();
+                    }
+                }
+                status="divide";
+                operator =false;
+                text=null;
+            }
+        });
+
+        btnequal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(operator)
+                {
+                    if(status =="plus")
+                    {
+                        plus();
+                    }
+                    else if(status =="multiply")
+                    {
+                        multiply();
+                    }
+                    else if (status=="minus")
+                    {
+                        minus();
+                    }
+                    else if(status=="divide")
+                    {
+                        divide();
+                    }
+                    else    {
+                        num1 = Double.parseDouble(tvresult.getText().toString());
+                    }
+                }
+                operator =false;
+            }
+        });
     }
+
+
 
     public void plus()
     {
+        num2 = Double.parseDouble(tvresult.getText().toString());
+        num1+=num2;
+        tvresult.setText(""+num1);
+    }
+    public void minus()
+    {
+        num2 = Double.parseDouble(tvresult.getText().toString());
+        num1-=num2;
+        tvresult.setText(""+num1);
+    }
 
+    public void divide()
+    {
+        num2 = Double.parseDouble(tvresult.getText().toString());
+        if (num2!=0)
+        {
+            num1/=num2;
+            tvresult.setText(""+num1);
+        }
+    }
+
+    public void multiply()
+    {
+        num2 = Double.parseDouble(tvresult.getText().toString());
+            num1*=num2;
+            tvresult.setText(""+num1);
     }
     private void UpdateText(String txt)
     {
         if(text==null)
         {
-            text = txt;
+            if(txt!="0") {
+                text = txt;
+            }
         }
         else
         {
             text+=txt;
         }
         tvresult.setText(text);
+        operator=true;
     }
 }

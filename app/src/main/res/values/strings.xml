@@ -44,6 +44,8 @@
     <string name="dot">.</string>
     <string name="equal">=</string>
 
+    <string name="btnPruductAdd">Add</string>
+
     <string-array name="country">
         <item>Turkey</item>
         <item>Russia</item>

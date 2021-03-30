@@ -40,9 +40,9 @@ public class CustomeListViewProductAdapter extends ArrayAdapter<Product> {
         View view = inflater.inflate(resource,parent,false);
 
         ImageView ivImage = (ImageView) view.findViewById(R.id.ivImage);
-        TextView tvName = (TextView) view.findViewById(R.id.tvName);
-        TextView tvPrice = (TextView) view.findViewById(R.id.tvPrice);
-        Button btnAdd = (Button)view.findViewById(R.id.btnAdd);
+        TextView tvName = (TextView) view.findViewById(R.id.tvProductName);
+        TextView tvPrice = (TextView) view.findViewById(R.id.tvProductPrice);
+        Button btnAdd = (Button)view.findViewById(R.id.btnProductAdd);
 
         Product product =  productList.get(position);
         ivImage.setImageDrawable(context.getResources().getDrawable(product.getImage()));

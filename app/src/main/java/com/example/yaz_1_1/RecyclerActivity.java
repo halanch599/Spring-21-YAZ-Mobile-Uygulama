@@ -26,6 +26,7 @@ public class RecyclerActivity extends AppCompatActivity {
 
         rvProductList = findViewById(R.id.rvProductList);
 
+        //
         // prducts
         products = new ArrayList<>();
         products.add(new Product("Apple Rize",1.50f,R.drawable.apple_100px));

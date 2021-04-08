@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Home" android:id="@+id/homeFragment" android:icon="@drawable/nav_home" />
+    <item android:id="@+id/searchFragment" android:title="Search" android:icon="@drawable/nav_search"/>
+    <item android:title="Category" android:id="@+id/categoryFragment" android:icon="@drawable/nav_category" />
+    <item android:title="Cart" android:id="@+id/cartFragment" android:icon="@drawable/nav_cart" />
+</menu>

@@ -9,27 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.YAZ_11">
-        <activity android:name=".RecyclerActivity">
+        <activity android:name=".NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CustomListViewActivity">
+        <activity android:name=".TabbedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityCalculator">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".RecyclerActivity"></activity>
+        <activity android:name=".CustomListViewActivity"></activity>
+        <activity android:name=".ActivityCalculator"></activity>
         <activity android:name=".ActivityRegister" />
         <activity android:name=".ActivityHome" />
         <activity android:name=".MainActivity" />

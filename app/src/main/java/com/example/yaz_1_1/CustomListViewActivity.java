@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 import com.example.yaz_1_1.model.CustomeListViewProductAdapter;
+import com.example.yaz_1_1.model.Customer;
+import com.example.yaz_1_1.model.CustomerDbHelper;
 import com.example.yaz_1_1.model.Product;
 
 import java.util.ArrayList;
@@ -30,6 +32,10 @@ public class CustomListViewActivity extends AppCompatActivity {
         productList.add(new Product("Smart Watch",3500,R.drawable.smart_watch_100px));
         productList.add(new Product("HD TV",3500,R.drawable.hdtv_100px));
         productList.add(new Product("Apple",3500,R.drawable.apple_100px));
+
+        //CustomerDbHelper helper = new CustomerDbHelper(this);
+
+//        ArrayList<Customer> list =helper.GetCustomers();
 
         CustomeListViewProductAdapter adapter = new CustomeListViewProductAdapter(this,R.layout.listview_product,productList);
         lvProduct.setAdapter(adapter);

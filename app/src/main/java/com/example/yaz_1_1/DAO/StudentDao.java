@@ -23,11 +23,11 @@ public interface StudentDao {
     @Query("SELECT * FROM Student WHERE First_Name LIKE :name OR Last_Name LIKE :name ORDER BY First_Name, Last_Name")
     public  LiveData<List<Student>> getStudentByName(String name);
 
-//    @Insert
-//    public  void insert(Student student);
-
     @Insert
-    public  void insert(Student... student);
+    public  void insert(Student student);
+
+//    @Insert
+//    public  void insert(Student... student);
 
     @Delete
     public void delete(Student student);
@@ -36,6 +36,6 @@ public interface StudentDao {
     public  void deleteAll();
 
     @Update
-    public void update(Student... student);
+    public void update(Student student);
 
 }

@@ -30,6 +30,8 @@ public abstract class StudentRoomDB extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             StudentRoomDB.class, "sms.db")
+                            // don't do this;
+//                            .allowMainThreadQueries() // this is for synchornous
                             .build();
                 }
             }

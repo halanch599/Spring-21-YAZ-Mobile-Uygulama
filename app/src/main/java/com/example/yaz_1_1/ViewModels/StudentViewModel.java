@@ -1,50 +1,51 @@
-package com.example.yaz_1_1.Respository;
+package com.example.yaz_1_1.ViewModels;
 
 import android.app.Application;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.Query;
-import androidx.room.Update;
 
-import com.example.yaz_1_1.DAO.StudentDao;
 import com.example.yaz_1_1.Entities.Student;
+import com.example.yaz_1_1.Respository.StudentRepository;
 import com.example.yaz_1_1.RoomDB.StudentRoomDB;
 
 import java.util.List;
 
-public class StudentRepository {
-    private StudentDao studentDao;
-    private LiveData<List<Student>> liveDataStudent;
+public class StudentViewModel extends AndroidViewModel {
 
-    public  StudentRepository(Application application)
-    {
-        StudentRoomDB db = StudentRoomDB.getInstance(application);
-        studentDao = db.getStudentDao();
-        liveDataStudent =  studentDao.getAllStudents();
+    private StudentRepository studentRepository;
+    private  LiveData<List<Student>> liveDataStudents;
+
+
+    public StudentViewModel(@NonNull Application application) {
+        super(application);
+
+        studentRepository = new StudentRepository(application);
+        liveDataStudents =  studentRepository.getAllStudents();
+
     }
 
     public LiveData<List<Student>> getAllStudents()
     {
-        return liveDataStudent;
+        return liveDataStudents;
     }
     public LiveData<List<Student>> getStudentById(int id)
     {
-        return studentDao.getStudentById(id);
+        return studentRepository.getStudentById(id);
     }
 
 
     public  LiveData<List<Student>> getStudentByName(String name)
     {
-        return studentDao.getStudentByName(name);
+        return studentRepository.getStudentByName(name);
     }
 
     public  void insert(Student student)
     {
         StudentRoomDB.databaseWriteExecutor.execute(()->
         {
-            studentDao.insert(student);
+            studentRepository.insert(student);
         });
     }
 
@@ -52,7 +53,7 @@ public class StudentRepository {
     {
         StudentRoomDB.databaseWriteExecutor.execute(()->
         {
-            studentDao.delete(student);
+            studentRepository.delete(student);
         });
     }
 
@@ -60,7 +61,7 @@ public class StudentRepository {
     {
         StudentRoomDB.databaseWriteExecutor.execute(()->
         {
-            studentDao.deleteAll();
+            studentRepository.deleteAll();
         });
     }
 
@@ -68,7 +69,7 @@ public class StudentRepository {
     {
         StudentRoomDB.databaseWriteExecutor.execute(()->
         {
-            studentDao.update(student);
+            studentRepository.update(student);
         });
     }
 }

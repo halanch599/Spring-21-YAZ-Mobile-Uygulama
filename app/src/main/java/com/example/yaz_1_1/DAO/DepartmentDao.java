@@ -29,6 +29,9 @@ public interface DepartmentDao {
     @Delete
     public void delete(Department department);
 
+//    @Delete
+//    public void delete(Department... departments);
+
     @Query("DELETE FROM Department")
     public  void deleteAll();
 
